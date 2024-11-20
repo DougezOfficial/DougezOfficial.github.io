@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1e1e1e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background: #2e2e2e;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1200px;
+    min-height: 70vh;
+    padding: 20px;
+}
+
+.navigation {
+    background: #4e4e4e;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover img {
+    transform: scale(1.1);
+}
+
+.logo-line {
+    border: 0;
+    height: 3px;
+    background: rgb(255, 124, 1);
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 0 0 #1e1e1e;
+}
+
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: x-large;
+}
+
+.navigation li {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 20px;
+    border: rgba(255, 124, 1, 50%);
+    border-width: 2px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font-weight: bold;
+    
+    transition: ease-in-out, .5s;
+}
+
+.navigation a:hover {
+    color: rgb(255, 124, 1);
+}
+
+.content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    font-size: 18px;
+}
+
+h1, h2 {
+    color: rgb(255, 124, 1);
+    text-decoration: underline;
+    text-decoration-color: #1e1e1e;
+    text-decoration-thickness: 4px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p {
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+a {
+    color: rgb(255, 124, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content section {
+    display: none;
+}
+
+#overview {
+    display: block;
+}
+
+section:target {
+    display: block; 
+}
