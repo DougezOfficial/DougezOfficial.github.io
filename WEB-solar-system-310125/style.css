@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.star:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(4) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(5) {
+    top: 90%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.solar-system {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.planet {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ffcc008a;
+    animation: pulse 5s infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.13);
+    }
+}
+
+.moon {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #999999;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbitMoon 5s linear infinite;
+}
+
+@keyframes orbitMoon {
+    0% {
+        transform: rotate(0deg) translateX(40px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(40px) rotate(0deg);
+    }
+}
+
+.mercury {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(to right, #644848, #000000);
+    animation: mercury 10s linear infinite;
+}
+
+.venus {
+    animation: venus 25.57s linear infinite;
+    width: 37.2px;
+    height: 37.2px;
+    background: linear-gradient(to right, #b94704, #000000);
+}
+
+.earth {
+    animation: earth 41.48s linear infinite;
+    width: 39.15px;
+    height: 39.15px;
+    background: linear-gradient(to right, #3b10fa, #000000);
+}
+
+.mars {
+    animation: mars 78.02s linear infinite;
+    width: 21px;
+    height: 21px;
+    background: linear-gradient(to right, #8d2e02, #000000);
+}
+
+@keyframes mercury {
+    0% {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(100px) rotate(0deg);
+    }
+}
+
+@keyframes venus {
+    0% {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(150px) rotate(0deg);
+    }
+}
+
+@keyframes earth {
+    0% {
+        transform: rotate(0deg) translateX(220px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(220px) rotate(0deg);
+    }
+}
+
+@keyframes mars {
+    0% {
+        transform: rotate(0deg) translateX(290px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(290px) rotate(0deg);
+    }
+}
