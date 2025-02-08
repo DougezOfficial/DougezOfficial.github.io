@@ -2,7 +2,7 @@ WEB-FIRMA-080225
 
 Pár slov na úvod:
 
-Tento web mi dal dost zabrat a naučil jsem se spoustu nových věcí. K instrukcím zadaným v dokumentu jsem implementoval další funkčnost stránky tak, aby se dala skoro bez úprav normálně používat. S pomocí umělé inteligence se mi podařilo udělat stránku responzivní, například s funkčním hamburgerovým menu, které se automaticky zobrazí při spuštění webu na telefonu. Práce mě hodně bavila a doporučuji si stránku stáhnout a vyzkoušet všechno, co umí, jsem na ní hrdý :D.
+Tento web mi dal dost zabrat a naučil jsem se spoustu nových věcí. K instrukcím zadaným v dokumentu jsem implementoval další funkčnost stránky tak, aby se dala skoro bez úprav normálně používat. S pomocí umělé inteligence se mi podařilo udělat stránku responzivní, například s funkčním hamburgerovým menu, které se automaticky zobrazí při spuštění webu na telefonu. Práce mě hodně bavila a doporučuji si stránku stáhnout a vyzkoušet všechno, co umí, jsem na ní hrdý :D. 
 
 Funkce stránky:
     -responzivnost při zobrazení na různých zařízeních
