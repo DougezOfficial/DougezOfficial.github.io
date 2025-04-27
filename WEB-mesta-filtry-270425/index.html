@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Správa měst | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Horní navigační lišta -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1 class="app-title">Správa měst</h1>
+            </div>
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-btn" aria-label="Přepnout režim">
+                    <svg id="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/>
+                    </svg>
+                    <span id="theme-text">Tmavý režim</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hlavní obsah -->
+        <main class="app-main">
+            <!-- Sekce s tabulkou -->
+            <section id="table-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18m6-18v18"/>
+                        </svg>
+                        Tabulka měst
+                    </h2>
+                    <div class="search-box">
+                        <input type="text" id="city-filter" placeholder="Filtrovat města...">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table id="cities-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">ID</th>
+                                <th class="col-city">Město</th>
+                                <th class="col-population">Počet obyvatel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Praha</td><td>1,324,277</td></tr>
+                            <tr><td>2</td><td>Brno</td><td>381,346</td></tr>
+                            <tr><td>3</td><td>Ostrava</td><td>287,968</td></tr>
+                            <tr><td>4</td><td>Plzeň</td><td>175,047</td></tr>
+                            <tr><td>5</td><td>Liberec</td><td>104,802</td></tr>
+                            <tr><td>6</td><td>Olomouc</td><td>100,514</td></tr>
+                            <tr><td>7</td><td>Ústí nad Labem</td><td>92,716</td></tr>
+                            <tr><td>8</td><td>České Budějovice</td><td>93,826</td></tr>
+                            <tr><td>9</td><td>Hradec Králové</td><td>92,939</td></tr>
+                            <tr><td>10</td><td>Pardubice</td><td>91,727</td></tr>
+                            <tr><td>11</td><td>Zlín</td><td>75,078</td></tr>
+                            <tr><td>12</td><td>Havířov</td><td>72,893</td></tr>
+                            <tr><td>13</td><td>Kladno</td><td>68,996</td></tr>
+                            <tr><td>14</td><td>Most</td><td>65,805</td></tr>
+                            <tr><td>15</td><td>Opava</td><td>57,019</td></tr>
+                            <tr><td>16</td><td>Frýdek-Místek</td><td>56,356</td></tr>
+                            <tr><td>17</td><td>Karviná</td><td>53,934</td></tr>
+                            <tr><td>18</td><td>Jihlava</td><td>51,325</td></tr>
+                            <tr><td>19</td><td>Teplice</td><td>50,779</td></tr>
+                            <tr><td>20</td><td>Děčín</td><td>49,441</td></tr>
+                            <tr><td>21</td><td>Chomutov</td><td>48,666</td></tr>
+                            <tr><td>22</td><td>Přerov</td><td>43,423</td></tr>
+                            <tr><td>23</td><td>Jablonec nad Nisou</td><td>45,316</td></tr>
+                            <tr><td>24</td><td>Mladá Boleslav</td><td>44,565</td></tr>
+                            <tr><td>25</td><td>Prostějov</td><td>43,680</td></tr>
+                            <tr><td>26</td><td>Třebíč</td><td>35,793</td></tr>
+                            <tr><td>27</td><td>Česká Lípa</td><td>37,047</td></tr>
+                            <tr><td>28</td><td>Třinec</td><td>35,512</td></tr>
+                            <tr><td>29</td><td>Tábor</td><td>34,117</td></tr>
+                            <tr><td>30</td><td>Znojmo</td><td>33,791</td></tr>
+                            <tr><td>31</td><td>Příbram</td><td>32,791</td></tr>
+                            <tr><td>32</td><td>Orlová</td><td>28,989</td></tr>
+                            <tr><td>33</td><td>Cheb</td><td>31,845</td></tr>
+                            <tr><td>34</td><td>Modřany</td><td>31,500</td></tr>
+                            <tr><td>35</td><td>Kroměříž</td><td>28,885</td></tr>
+                            <tr><td>36</td><td>Litoměřice</td><td>24,055</td></tr>
+                            <tr><td>37</td><td>Hodonín</td><td>24,800</td></tr>
+                            <tr><td>38</td><td>Nový Jičín</td><td>23,614</td></tr>
+                            <tr><td>39</td><td>Šumperk</td><td>25,992</td></tr>
+                            <tr><td>40</td><td>Vsetín</td><td>25,838</td></tr>
+                            <tr><td>41</td><td>Valašské Meziříčí</td><td>22,361</td></tr>
+                            <tr><td>42</td><td>Litvínov</td><td>24,398</td></tr>
+                            <tr><td>43</td><td>Břeclav</td><td>24,944</td></tr>
+                            <tr><td>44</td><td>Krnov</td><td>23,713</td></tr>
+                            <tr><td>45</td><td>Uherské Hradiště</td><td>25,050</td></tr>
+                            <tr><td>46</td><td>Havlíčkův Brod</td><td>23,456</td></tr>
+                            <tr><td>47</td><td>Chrudim</td><td>23,072</td></tr>
+                            <tr><td>48</td><td>Kopřivnice</td><td>22,241</td></tr>
+                            <tr><td>49</td><td>Klatovy</td><td>22,017</td></tr>
+                            <tr><td>50</td><td>Bílina</td><td>17,267</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Sekce s formulářem -->
+            <section id="form-section" class="dashboard-section">
+                <h2 class="section-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    Vyhledávací formulář
+                </h2>
+                
+                <form id="city-form" class="city-form">
+                    <div class="form-group">
+                        <label for="menu-filter">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                            </svg>
+                            Filtrovat výběr
+                        </label>
+                        <input type="text" id="menu-filter" placeholder="Začněte psát název města...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city-select">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Vyberte město
+                        </label>
+                        <select id="city-select">
+                            <option value="" disabled selected>-- Vyberte --</option>
+                            <option value="1">Praha</option>
+                            <option value="2">Brno</option>
+                            <option value="3">Ostrava</option>
+                            <option value="4">Plzeň</option>
+                            <option value="5">Liberec</option>
+                            <option value="6">Olomouc</option>
+                            <option value="7">Ústí nad Labem</option>
+                            <option value="8">České Budějovice</option>
+                            <option value="9">Hradec Králové</option>
+                            <option value="10">Pardubice</option>
+                            <option value="11">Zlín</option>
+                            <option value="12">Havířov</option>
+                            <option value="13">Kladno</option>
+                            <option value="14">Most</option>
+                            <option value="15">Opava</option>
+                            <option value="16">Frýdek-Místek</option>
+                            <option value="17">Karviná</option>
+                            <option value="18">Jihlava</option>
+                            <option value="19">Teplice</option>
+                            <option value="20">Děčín</option>
+                            <option value="21">Chomutov</option>
+                            <option value="22">Přerov</option>
+                            <option value="23">Jablonec nad Nisou</option>
+                            <option value="24">Mladá Boleslav</option>
+                            <option value="25">Prostějov</option>
+                            <option value="26">Třebíč</option>
+                            <option value="27">Česká Lípa</option>
+                            <option value="28">Třinec</option>
+                            <option value="29">Tábor</option>
+                            <option value="30">Znojmo</option>
+                            <option value="31">Příbram</option>
+                            <option value="32">Orlová</option>
+                            <option value="33">Cheb</option>
+                            <option value="34">Modřany</option>
+                            <option value="35">Kroměříž</option>
+                            <option value="36">Litoměřice</option>
+                            <option value="37">Hodonín</option>
+                            <option value="38">Nový Jičín</option>
+                            <option value="39">Šumperk</option>
+                            <option value="40">Vsetín</option>
+                            <option value="41">Valašské Meziříčí</option>
+                            <option value="42">Litvínov</option>
+                            <option value="43">Břeclav</option>
+                            <option value="44">Krnov</option>
+                            <option value="45">Uherské Hradiště</option>
+                            <option value="46">Havlíčkův Brod</option>
+                            <option value="47">Chrudim</option>
+                            <option value="48">Kopřivnice</option>
+                            <option value="49">Klatovy</option>
+                            <option value="50">Bílina</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Potvrdit výběr</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
